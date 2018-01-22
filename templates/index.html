@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>HTML Calculator</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body bgcolor= "#000000" text= "gold">
+
+<form name="calculator">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1"><input type="button" value="7" class="btn btn-default" onClick="document.calculator.ans.value+='7'"></div>
+    <div class="col-md-1"><input type="button" value="8" class="btn btn-default" onClick="document.calculator.ans.value+='8'"></div>
+    <div class="col-md-1"><input type="button" value="9" class="btn btn-default" onClick="document.calculator.ans.value+='9'"></div>
+    <div class="col-md-1"><input type="button" value="/" class="btn btn-default" onClick="document.calculator.ans.value+='/'"></div>
+    <div class="col-md-4"></div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1"><input type="button" value="4" class="btn btn-default" onClick="document.calculator.ans.value+='4'"></div>
+    <div class="col-md-1"><input type="button" value="5" class="btn btn-default" onClick="document.calculator.ans.value+='5'"></div>
+    <div class="col-md-1"><input type="button" value="6" class="btn btn-default" onClick="document.calculator.ans.value+='6'"></div>
+    <div class="col-md-1"><input type="button" value="*" class="btn btn-default" onClick="document.calculator.ans.value+='*'"></div>
+    <div class="col-md-4"></div>
+
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1"><input type="button" value="1" class="btn btn-default" onClick="document.calculator.ans.value+='1'"></div>
+    <div class="col-md-1"><input type="button" value="2" class="btn btn-default" onClick="document.calculator.ans.value+='2'"></div>
+    <div class="col-md-1"><input type="button" value="3" class="btn btn-default" onClick="document.calculator.ans.value+='3'"></div>
+    <div class="col-md-1"><input type="button" value="-" class="btn btn-default" onClick="document.calculator.ans.value+='-'"></div>
+    <div class="col-md-4"></div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1"><input type="button" value="." class="btn btn-default" onClick="document.calculator.ans.value+='.'"></div>
+    <div class="col-md-1"><input type="button" value="0" class="btn btn-default" onClick="document.calculator.ans.value+='0'"></div>
+    <div class="col-md-1"><input id='equals' type="button" value="=" class="btn btn-default"></div>
+    <div class="col-md-1"><input type="button" value="+" class="btn btn-default" onClick="document.calculator.ans.value+='+'"></div>
+    <div class="col-md-4"></div>
+
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-1"><input id="sqrt" type="button" value="SQRT" class="btn btn-default" onClick="document.calculator.ans.value=eval(Math.sqrt(document.calculator.ans.value))"></div>
+    <div class="col-md-1"><input type="reset" value="Reset"></div>
+    <div class="col-md-1"><input id="ans" type="textfield" name="ans" value=""></div>
+    <div class="col-md-4"></div>
+</div>
+
+</form>
+</body>
+
+<footer>
+    <script type="text/javascript">
+    document.getElementById('ans').addEventListener("click", function() {
+        console.log('clicked');
+        if (isNaN(document.calculator.ans.value)) {
+            alert('Illegal input')
+            document.calculator.ans.value=""
+        }
+
+    })
+    document.getElementById('sqrt').addEventListener("click", function() {
+        console.log('clicked');
+        if (isNaN(document.calculator.ans.value)) {
+            alert('Illegal input')
+            document.calculator.ans.value=""
+        }
+
+    })
+
+     document.getElementById('equals').addEventListener("click", function() {
+         console.log('clicked');
+         try {
+             document.calculator.ans.value=eval(document.calculator.ans.value)
+         }
+         catch(err) {
+             alert('Illegal input')
+             document.calculator.ans.value=""
+         }
+
+
+     })
+
+    </script>
+
+</footer>
+</html>
